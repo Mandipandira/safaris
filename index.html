@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<!-- Start of Async Drift Code -->
+<script>
+    "use strict";
+    
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('z8cetgumdik2');
+</script>
+    <!-- End of Async Drift Code -->
+
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lift_up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="navsidebars.css">
+    <title>Breathtaking Landing Page</title>
+    <style>
+        /* General Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section */
+        header {
+            background: #333;
+            color: silver;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('imgs/hero2.jpg') center/cover;
+            height: 600px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 48px;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f5f5f5;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .feature-box {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #333;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+            width: 250px;
+            height: 300px;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        
+
+        .testimonial {
+            margin-bottom: 30px;
+            scroll-snap-align: center; 
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 200px;
+        }
+
+        .logo_fr > img {
+            max-width: 200px;
+            object-fit: cover;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .navbar-menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin: 0 10px;
+        }
+
+        .navbar-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-signup {
+            margin-right: 10px;
+        }
+
+        .navbar-signup a {
+            background-color: #fff;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            font-family: Arial, Helvetica, sans-serif;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgba(24, 22, 22, 0.479);
+            color: #fff;
+            transition: left 0.3s;
+            overflow-y: auto;
+        }
+
+        .sidebar-open {
+            left: 0;
+        }
+
+        .sidebar-brand {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .sidebar-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px;
+            display: block;
+        }
+
+        .side-list {
+            background: #333;
+            color: black;
+        }
+
+        #fasfa {
+            background: #333;
+            color: rgb(0, 140, 255);
+        }
+
+        hr {
+            color: rgb(0, 140, 255);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            margin-bottom: 4px;
+            margin-right: 40px;
+            background-color: rgb(0, 140, 255);
+        }
+
+        .hero_p {
+            width: 40%;
+            margin-left: 10px;
+        }
+
+        .hero_p > p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            margin-left: 5px;
+            margin-bottom: 3px;
+            color: #f3f708;
+            font-size: 22px;
+        }
+
+        .social-icons a:hover {
+            color: #9abe14;
+        }
+
+        #begin {
+            width: 200px;
+            height: 60px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            align-items: center;
+            background: orange;
+            color: #333;
+            border-radius: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #begin > a {
+            color: #333333;
+        }
+
+        #begin:hover {
+            background: orangered;
+            color: orange;
+        }
+
+        button {
+            background: rgba(0, 0, 0, 0.342);
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        button:hover {
+            background: rgb(0, 140, 255);
+        }
+
+        button > a:hover {
+            color: #20a306;
+        }
+
+        #abut {
+            width: 150px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        #abut > a {
+            color: #eee;
+        }
+
+        #butt {
+            background: #333;
+            color: #fff;
+            font-size: 25px;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #butt > a:hover {
+            color: rgb(0, 140, 255);
+        }
+
+        #features-itm {
+            opacity: 20;
+        }
+
+        #features-itm:hover {
+            opacity: 20;
+        }
+
+        @media (max-width: 600px) {
+            .hero_p {
+                width: 65%;
+            }
+
+            .hero {
+                font-size: 32px;
+            }
+
+            #features-itm {
+                opacity: 0.5;
+            }
+    
+            #features-itm:hover {
+                opacity: 20;
+            }
+        }
+
+        @media (max-width: 10000px) {
+            .navbar-menu {
+                display: none;
+            }
+    
+            .navbar-signup {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+
+        /* SVG Animation */
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .floating-svg {
+            animation: floating 3s ease infinite;
+        }
+    </style>
+
+    <script>
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('sidebar-open');
+        }
+
+        const containers = document.querySelectorAll('.container');
+      
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate__fadeIn');
+              entry.target.classList.remove('animate__fadeOut');
+            } else {
+              entry.target.classList.remove('animate__fadeIn');
+              entry.target.classList.add('animate__fadeOut');
+            }
+          });
+        });
+      
+        containers.forEach((container) => {
+          observer.observe(container);
+        });
+    </script>
+
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="imgs/logo-saf.jpg.png" style="height: auto; width: 150px;">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+           
+            <div id="link">
+                <div class="login">
+                    <button id="login"></button>
+                </div>
+            </div>
+            <div id="link">    
+                <div class="signup">
+                    <button id="signup"></button>
+                </div>
+            </div>
+        </ul>
+        <div class="hamburger" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img src="" style="margin-left: 0; width: 100%;">
+        </div>
+        <ul class="sidebar-menu">
+            
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-home fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="#">Home</a>
+            </li>
+            <hr>
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-campground fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="accommodation.html">Accomodation</a>
+            </li>
+            <hr>
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-graduation-cap fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="tours.html">Safari Tours</a>
+            </li>
+            <hr>
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-hiking fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="activities">Activities</a>
+            </li>
+            <hr>
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-plane fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="destinations.html">Destinations</a>
+            </li>
+            <hr>
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-question fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="#"></a>
+            </li>
+            <hr>
+            <li class="side-list">
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-phone fa-stack-1x fa-inverse" id="fasfa"></i>
+                </span>
+                <span class="gap"></span>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="lift-up-bar" id="liftUpBar">
+        <form id="userForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    
+      <div class="welcome-section">
+        <h1>Welcome, <span id="welcomeName"></span>!</h1>
+      </div>
+
+      
+
+
+
+    <section class="hero">
+        <h2 style="color: rgb(5, 5, 77); margin-top: 100px;">Classic Wildlife Outdoor Safaris</h2>
+
+        <div class="hero_p">
+            <p>One of Zimbabwe`s up coming tourism and hospitality group – Kanyongo safaris offers unique fresh water river experiences, lake and game park experiences. 
+            Join us and camp with us at any of your places of choices and interest around Zimbabwe.</p>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/mandipandira"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/mjvDG9TDqBZfEJkS/?mibextid=qi2Omg"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+   
+   
+        <div class="social-icons">
+            
+            <a href="https://zw.linkedin.com/in/adrian-mandipandira-707b28290"><i class="fab fa-linkedin"></i></a>
+            <a href="https://pin.it/2wCFs9CY2"><i class="fab fa-pinterest"></i></a>
+        </div>
+
+        <center>
+            <button id="begin">
+                <a href="#">EXPLORE</a>
+            </button>
+        </center>
+    </section>
+
+    <style>
+        .cont {
+            display: grid;
+        }
+        .dest {
+            max-width: 400px;
+            background: #fff;
+            object-fit: scale-down;
+            border-radius: 10px;
+        }
+
+        .dest-x {
+            max-width: 400px;
+            height: 30vh;
+            object-fit: cover;
+        }
+
+          
+    </style>
+
+
+    <center>
+        <section>
+           
+                <div class="dest" style="background: url('imgs/eagle1c.jpg');">
+                    <div class="dest-x">
+                     <h1 style="color: brown;">EXPERIENCE THE BEAUTY OF NATURE</h1>
+                     <p>Kanyongo Safaris is there for you.</p>
+                     <button id="abut"><a href="saf-about.html">About Us</a></button>
+                </div>
+                    
+
+                <div class="dest">
+                    <div class="dest-pic">
+                        <img src="" />
+                    </div>
+                </div>
+
+                <div class="dest">
+                    <div class="dest-pic">
+                        <img src="" />
+                    </div>
+                    </div>
+                </div>
+        </section>
+
+
+        <main>
+            <style>
+
+                h1 {
+                    text-align: center;
+                    color: #333;
+                }
+        
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    grid-gap: 30px;
+                    margin-top: 40px;
+                    margin: 10px;
+                }
+        
+                .service-item {
+                    background-color: #eee;
+                    padding: 20px;
+                    border-radius: 20px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                }
+
+                .service-item-cover {
+                    border-width: 5px;
+                    border-radius: 20px;
+                    background-color: rgb(0, 140, 255);
+                    margin: 10px;
+                }
+
+                .service-item-cover:hover {
+                    background-color: #f7a308;
+                }
+        
+                .service-item h2 {
+                    color: rgb(199, 135, 15);
+                    background: black;
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+            
+                .service-item p {
+                    color: rgb(165, 3, 3);
+                    font-size: 16px;
+                    font-weight: bolder;
+                }
+        
+                .section {
+                    width: 100%;
+                    height: auto;
+                    background: silver;
+                    margin-top: 20px;
+                }
+            </style>
+
+            <div class="grid-container">
+                <div class="service-item-cover">
+                <div class="service-item" id="features-itm" style="background: url('imgs/karib1.jpg'); margin-top: 20px;">
+                    <h2 style="background: black;">KARIBA</h2>
+                    <p>Lake Kariba is amongst the largest man-made lakes in the world and it holds the record in the largest volume...</p>
+                    <button id="butt"><a href="#">Learn more</a></button>
+                </div>
+                </div>
+
+                <div class="service-item-cover">
+                <div class="service-item" id="features-itm" style="background: linear-gradient(45deg, green, grey); margin-top: 20px;">
+                    <h2>MANA POOLS</h2>
+                    <p>Mana Pools National Park is a wildlife conservation area and national park in northern Zimbabwe, spanning 219,600 hectares...</p>
+                    <button id="butt"><a href="destinations.html">Learn more</a></button>
+                </div>
+                </div>
+
+                <div class="service-item-cover">
+                <div class="service-item" id="features-itm" style="background: url('imgs/darwe.jpg'); margin-top: 20px;">
+                    <h2>DARWENDALE</h2>
+                    <p>Darwendale Recreational Park has an area of 11,200 hectares. The Lake Manyame water body, which is home to several aquatic species like...</p>
+                    <button id="butt"><a href="destinations.html">Learn more</a></button>
+                </div>
+                </div>
+
+                <div class="service-item-cover">
+                <div class="service-item" id="features-itm" style="background: url('imgS/vicc.jpeg'); object-fit: scale-down; margin-top: 20px;">
+                    <h2>VICTORIA FALLS</h2>
+                    <p>The Smoke that thunders “Mosi Oa – Tunya” Victoria Falls is amongst one of the natural seven wonders of the natural world. It is...</p>
+                    <button id="butt"><a href="destinations.html">Learn more</a></button>
+                </div>
+                </div>
+
+            </div>
+
+            <div class="grid-container">
+
+                    <div class="service-item-cover">
+                    <div class="service-item" id="features-itm" style="background: url('imgs/karib1.jpg') center/scale-down; margin-top: 20px;">
+                        <h2>CHIMANIMANI</h2>
+                        <p>Darwendale Recreational Park has an area of 11,200 hectares. The Lake Manyame water body, which is home to several aquatic species like...</p>
+                        <button id="butt"><a href="destinations.html">Learn more</a></button>
+                    </div>
+                    </div>
+
+                    <div class="service-item-cover">
+                        <div class="service-item" id="features-itm" style="background: url('imgs/karib1.jpg') center/scale-down; margin-top: 20px;">
+                            <h2>INYANGA</h2>
+                            <p>Darwendale Recreational Park has an area of 11,200 hectares. The Lake Manyame water body, which is home to several aquatic species like...</p>
+                            <button id="butt"><a href="destinations.html">Learn more</a></button>
+                        </div>
+                    </div>
+                
+
+            </div>
+        
+        </main>
+        
+
+
+    <section class="features">
+        <div class="feature-box">
+            <svg class="floating-svg" width="100" height="100" viewBox="0 0 100 100">
+                <!-- Add your SVG shape here -->
+                <polygon points="50,50 150,150 250,50" fill="pink" /> 
+            </svg>
+            <h3>You imagine,</h3>
+            <p></p>
+        </div>
+
+        <div class="feature-box">
+            <svg class="floating-svg" width="100" height="100" viewBox="0 0 100 100">
+                <!-- Add your SVG shape here -->
+                <circle cx="150" cy="150" r="50" fill="green" />
+            </svg>
+            <h3>TRIP NOTIFICATIONS</h3>
+            <p style="max-width: 500px;">Attention! All trips will be reflected here. You will be able to register and organise on the fill-in form that we will provide.</p>
+        </div>
+
+        <div class="feature-box">
+            <svg class="floating-svg" width="100" height="100" viewBox="0 0 100 100">
+                <!-- Add your SVG shape here -->
+                <polygon points="50,50 150,150 250,50" fill="pink" />
+            </svg>
+            <h3>We create</h3>
+            <p></p>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        
+
+            <div class="testimonial">
+                <img src="imgs/1712890935298.jpg" alt="Testimonial 2">
+                <p>"Everything organised through Kanyongo Safaris is nothing short of professionalism. You're the best!"</p>
+                <p id="testimonial_name" style="color: #008cff">- @mandipandira | Instagram</p>
+                <a href="">Follow</a>
+            </div>
+
+            <hr>
+            <div class="testimonial">
+                <img src="imgs/1712890935298.jpg" alt="Testimonial 2">
+                <p>"I had an amazing time at the game park. The staff went above and beyond to make our visit enjoyable."</p>
+                <p id="testimonial_name" style="color: #008cff">- Adrian M</p>
+            </div>
+
+            <hr>
+            <div class="testimonial">
+                <img src="imgs/1712890935298.jpg" alt="Testimonial 2">
+                <p>"I would highly recommend KS to anyone looking for a fantastic wildlife adventure."</p>
+                <p id="testimonial_name" style="color: #008cff">- Reggie</p>
+            </div>
+
+            <hr>
+            <div class="testimonial">
+                <img src="imgs/1712890935298.jpg" alt="Testimonial 2">
+                <p>" K-Saf went above and beyond to make our visit enjoyable."</p>
+                <p id="testimonial_name" style="color: #008cff">- @site_dev_lanso</p>
+            </div>
+        
+    </section>
+
+    <script>
+
+        const container = document.getElementsByClass('testimonials');
+        let startY;
+
+        container.addEventListener('touchstart', (e) => {
+            // Store the initial touch position
+            startY = e.touches[0].clientY;
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const currentY = e.touches[0].clientY;
+            const scrollDistance = startY - currentY;
+
+            container.scrollTop += scrollDistance;
+            startY = currentY;
+        });
+
+    </script>
+
+    <div class="footer">
+
+        <div class="nxt2nxt">
+          <p>
+            <div style="font-size: 30px;"><i class="fas fa-map-marker-alt">Location:</i></div>
+            <div>1 Acacia Drive,</div>
+            <div>Heights, Kariba</div>
+            <div>Zimbabwe</div>
+      
+            <div class="social-icons">
+              <i class="fas fa-envelope"></i>
+              <i class="fas fa-phone"></i>
+            </div>
+            <a href="tel: 0773224064" class="call-link">+263 77 322 4064</a>
+          </p>
+        </div>
+      
+        
+            
+          
+        <div class="nxt2nxt">
+          <p>
+            <div style="font-size: 30px;">Kanyongo Safaris</div>
+            <div>Wildlife</div>
+            <div><a href="index.html">Home</a></div>
+            <div><a href="accommodation.html">Accomodation</a></div>
+            <div><a href="#">Safari tours</a></div>
+          </p>
+        </div>
+      
+        <div class="nxt2nxt">
+          <div style="font-size: 30px;">Social Handles:</div>
+      
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      
+      </div>
+
+
+      <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+          var expires = "";
+          if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+          }
+          document.cookie = name + "=" + value + expires + "; path=/";
+        }
+    
+        // Function to get the value of a cookie
+        function getCookie(name) {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(';');
+          for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+        }
+    
+        var liftUpBar = document.getElementById('liftUpBar');
+        var userForm = document.getElementById('userForm');
+        var welcomeName = document.getElementById('welcomeName');
+
+        // Check if user's name is already stored in a cookie
+    var storedName = getCookie('userName');
+    if (storedName) {
+      welcomeName.textContent = storedName;
+      liftUpBar.style.bottom = '0';
+    } else {
+      liftUpBar.style.bottom = '-100px'; // Hide the lift-up bar initially
+    }
+
+    // Handle form submission
+    userForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      setCookie('userName', name, 365); // Store the name in a cookie for 365 days
+      welcomeName.textContent = name;
+      liftUpBar.style.bottom = '-100px'; // Make the lift-up bar go down
+
+      // Hide the form after a delay of 2 seconds (2000 milliseconds)
+      setTimeout(function() {
+        userForm.style.display = 'none';
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
