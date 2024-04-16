@@ -630,7 +630,6 @@
       </div>
 
 
-        <main>
             <style>
 
                 h1 {
@@ -640,7 +639,7 @@
         
                 .grid-container {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
                     grid-gap: 30px;
 		    width: 100%;
                     margin-top: 40px;
@@ -685,7 +684,18 @@
                     background: silver;
                     margin-top: 20px;
                 }
+
+		@media (min-width: 400px) {
+			.grid-container {
+            			grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+			}
+
+			.service-item {
+				display: inline-block;
+            	}
             </style>
+
+	<section>
 
             <div class="grid-container">
                 <div class="service-item-cover">
@@ -743,7 +753,7 @@
 
             </div>
         
-        </main>
+        </section>
         
 
 
