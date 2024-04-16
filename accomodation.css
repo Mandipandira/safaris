@@ -26,3 +26,72 @@
   .hostels h2 {
     color: gold;
   }
+
+.footer {
+	background: #0c162e;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #bbb;
+	margin-top: 10px;
+}
+
+.nxt2nxt > a {
+    color: #bbb;
+}
+
+.nxt2nxt > p,a {
+    color: #bbb;
+}
+
+.nxt2nxt {
+	width: 200px;
+	height: auto;
+	margin-right: 10px;
+	margin-top: 20px;
+	padding: 2px;
+	color: silver;
+}
+
+@media (max-width: 600px) {
+    .hero_p {
+        width: 65%;
+    }
+
+    .hero {
+        font-size: 32px;
+    }
+
+    #features-itm {
+        opacity: 0.5;
+    }
+    
+    #features-itm:hover {
+        opacity: 20;
+    }
+}
+
+@media (max-width: 10000px) {
+    .navbar-menu {
+        display: none;
+    }
+    
+    .navbar-signup {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+	.footer {
+		display: grid;
+	}
+
+	.nxt2nxt {
+		display: block;
+	}
+}
